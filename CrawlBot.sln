@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3FAADBE4-2243-4F2A-B1A5-B1CE0A82D0D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6582F7D6-6F6C-48A0-8732-8C271DD2B860}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CrawlBot.Core", "src\CrawlBot.Core\CrawlBot.Core.xproj", "{E45E66A0-85BA-4999-8337-F23E3647C82C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E45E66A0-85BA-4999-8337-F23E3647C82C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E45E66A0-85BA-4999-8337-F23E3647C82C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E45E66A0-85BA-4999-8337-F23E3647C82C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E45E66A0-85BA-4999-8337-F23E3647C82C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E45E66A0-85BA-4999-8337-F23E3647C82C} = {3FAADBE4-2243-4F2A-B1A5-B1CE0A82D0D7}
+	EndGlobalSection
+EndGlobal
