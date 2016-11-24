@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
+using CrawlBot.Core.Abstract;
+using CrawlBot.Core.Concrete;
 
 namespace CrawlBot.Core.Models
 {
@@ -19,6 +22,21 @@ namespace CrawlBot.Core.Models
         {
             Request = new HttpRequest(uri);
             Response = new HttpResponse(uri);
+        }
+
+        public bool CallGetRequestAsync()
+        {
+            IWebDownloader downloader = new HttpDownloader();
+            try
+            {
+                Response.InvocationTime = DateTime.Now;
+                Response.Content = downloader.GetHtmlContent(this).Result;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

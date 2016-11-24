@@ -7,14 +7,9 @@ namespace CrawlBot.Core.Models
 {
     public class HttpBase
     {
-        private DateTime _invocationTime;
-
         public Uri Uri { get; set; }
 
-        public DateTime InvocationTime
-        {
-            get { return _invocationTime; }
-        }
+        public DateTime InvocationTime { get; set; }
 
         public HttpBase(Uri uri)
         {

@@ -1,20 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace CrawlBot.Core.Models
 {
     public class HttpResponse : HttpBase
     {
-        private string _content;
+        public string Content { get; set; }
 
-        public Uri Uri { get; set; }
-
-        public string Content
-        {
-            get { return _content; }
-        }
+        public HttpStatusCode ResponseCode { get; set; }
 
 
         public HttpResponse(Uri uri) : base(uri)

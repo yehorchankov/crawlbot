@@ -1,9 +1,10 @@
-﻿using CrawlBot.Core.Models;
+﻿using System.Threading.Tasks;
+using CrawlBot.Core.Models;
 
 namespace CrawlBot.Core.Abstract
 {
     internal interface IWebDownloader
     {
-        HttpContext GetContent(HttpContext context);
+        Task<string> GetHtmlContent(HttpContext context);
     }
 }
