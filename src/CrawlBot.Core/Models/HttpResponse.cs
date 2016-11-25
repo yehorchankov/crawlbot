@@ -16,6 +16,8 @@ namespace CrawlBot.Core.Models
 
         public HttpStatusCode ResponseCode { get; set; }
 
+        public Exception InnerException { get; set; }
+
         public HttpResponse(Uri uri) : base(uri)
         {
             
@@ -29,8 +31,9 @@ namespace CrawlBot.Core.Models
                 InvocationTime = DateTime.Now;
                 ResponseContent = new ContentProxy(downloader.GetHtmlContent(Uri).Result);
             }
-            catch (Exception)
+            catch (Exception exc)
             {
+                InnerException = exc;
                 return false;
             }
             return true;
