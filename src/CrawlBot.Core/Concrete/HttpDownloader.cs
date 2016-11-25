@@ -12,11 +12,10 @@ namespace CrawlBot.Core.Concrete
 {
     public class HttpDownloader : IWebDownloader
     {
-        public async Task<string> GetHtmlContent(HttpContext context)
+        public async Task<HttpResponseMessage> GetHtmlContent(Uri uri)
         {
             HttpClient client = new HttpClient();
-            var requestResult = await client.GetAsync(context.Request.Uri);
-            return await requestResult.Content.ReadAsStringAsync();
+            return await client.GetAsync(uri);
         }
     }
 }

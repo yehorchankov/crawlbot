@@ -26,17 +26,7 @@ namespace CrawlBot.Core.Models
 
         public bool CallGetRequestAsync()
         {
-            IWebDownloader downloader = new HttpDownloader();
-            try
-            {
-                Response.InvocationTime = DateTime.Now;
-                Response.Content = downloader.GetHtmlContent(this).Result;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-            return true;
+            return Response.Call();
         }
     }
 }

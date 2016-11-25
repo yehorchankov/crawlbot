@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CrawlBot.Core.Models
 {
-    public class HttpBase
+    public abstract class HttpBase
     {
         public Uri Uri { get; set; }
 
