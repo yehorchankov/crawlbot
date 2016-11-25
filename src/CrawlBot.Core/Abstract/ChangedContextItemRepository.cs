@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using CrawlBot.Core.Models;
 using System.Linq;
-using System.Threading.Tasks;
 
-namespace CrawlBot.Core.Models
+namespace CrawlBot.Core.Abstract
 {
     public class ChangedContextItemRepository
     {
