@@ -38,5 +38,23 @@ namespace CrawlBot.Core.Models
             }
             return true;
         }
+
+        public LastChangedContextItem GetLastChangedContextItem()
+        {
+            var item = new LastChangedContextItem();
+            item.Save(this);
+            return item;
+        }
+
+        public void Recover(ChangedContextItemRepository repository)
+        {
+            SetFieldsValues(repository.GetItemById(Id));
+        }
+
+        public void SetFieldsValues(LastChangedContextItem item)
+        {
+            InnerException = item.InnerException;
+            InvocationTime = item.InvocationTime;
+        }
     }
 }

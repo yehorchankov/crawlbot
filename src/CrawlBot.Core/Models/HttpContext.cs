@@ -13,6 +13,8 @@ namespace CrawlBot.Core.Models
         public HttpRequest Request { get; }
         public HttpResponse Response { get; }
 
+        public Guid Id { get; set; }
+
         public HttpContext(string uri) : this(new Uri(uri))
         {
             
@@ -27,6 +29,24 @@ namespace CrawlBot.Core.Models
         public bool CallGetRequestAsync()
         {
             return Response.Call();
+        }
+
+        public LastChangedContextItem GetLastChangedContextItem()
+        {
+            var item = new LastChangedContextItem();
+            item.Save(this);
+            return item;
+        }
+
+        public void Recover(ChangedContextItemRepository repository)
+        {
+            SetFieldsValues(repository.GetItemById(Id));
+        }
+
+        public void SetFieldsValues(LastChangedContextItem item)
+        {
+            Response.InnerException = item.InnerException;
+            Response.InvocationTime = item.InvocationTime;
         }
     }
 }
