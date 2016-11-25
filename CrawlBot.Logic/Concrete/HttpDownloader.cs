@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Net;
 using System.Net.Http;
-using CrawlBot.Core.Abstract;
-using CrawlBot.Core.Models;
+using System.Threading.Tasks;
+using CrawlBot.Logic.Abstract;
 
-namespace CrawlBot.Core.Concrete
+namespace CrawlBot.Logic.Concrete
 {
     public class HttpDownloader : IWebDownloader
     {

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CrawlBot.Core.Abstract;
-using CrawlBot.Core.Models;
+﻿using CrawlBot.Logic.Abstract;
+using CrawlBot.Logic.Models;
 
-namespace CrawlBot.Core.Concrete
+namespace CrawlBot.Logic.Concrete
 {
     public class SuccessfullResponseHandler : Handler
     {

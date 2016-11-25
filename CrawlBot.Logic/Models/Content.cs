@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
-using CrawlBot.Core.Abstract;
+using CrawlBot.Logic.Abstract;
 
-namespace CrawlBot.Core.Models
+namespace CrawlBot.Logic.Models
 {
     public class Content : ResponseContent
     {

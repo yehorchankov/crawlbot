@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CrawlBot.Core.Models;
+using CrawlBot.Logic.Models;
 
-namespace CrawlBot.Core.Abstract
+namespace CrawlBot.Logic.Abstract
 {
     public abstract class Handler
     {

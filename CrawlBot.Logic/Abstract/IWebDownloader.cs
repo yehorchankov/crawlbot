@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using CrawlBot.Core.Models;
 
-namespace CrawlBot.Core.Abstract
+namespace CrawlBot.Logic.Abstract
 {
     internal interface IWebDownloader
     {

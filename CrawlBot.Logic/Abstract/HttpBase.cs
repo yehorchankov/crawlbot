@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CrawlBot.Core.Abstract
+namespace CrawlBot.Logic.Abstract
 {
     public abstract class HttpBase
     {

@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
-using CrawlBot.Core.Abstract;
-using CrawlBot.Core.Concrete;
+using CrawlBot.Logic.Abstract;
+using CrawlBot.Logic.Concrete;
 
-namespace CrawlBot.Core.Models
+namespace CrawlBot.Logic.Models
 {
     public class HttpResponse : HttpBase
     {

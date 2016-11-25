@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
 
-namespace CrawlBot.Core.Abstract
+namespace CrawlBot.Logic.Abstract
 {
     public abstract class ResponseContent
     {
