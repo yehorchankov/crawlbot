@@ -20,7 +20,10 @@ namespace CrawlBot.Logic.Models
 
         private async Task<string> GetResponseText()
         {
-            return await ResponseMessage.Content.ReadAsStringAsync();
+            using (HttpContent content = ResponseMessage.Content)
+            {
+                return await content.ReadAsStringAsync();
+            }
         }
     }
 }

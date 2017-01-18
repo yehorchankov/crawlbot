@@ -1,15 +1,16 @@
 using System;
+using CrawlBot.Logic.Abstract;
 
 namespace CrawlBot.Logic.Models
 {
     public class LastChangedContextItem
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
         public DateTime ModificationDate { get; set; }
         public Exception InnerException { get; set; }
         public DateTime InvocationTime { get; set; }
 
-        public void Save(HttpContext context)
+        public void Save(ContextBase context)
         {
             Id = context.Id;
             ModificationDate = DateTime.Now;

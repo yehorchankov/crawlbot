@@ -1,4 +1,5 @@
-﻿using CrawlBot.Logic.Abstract;
+﻿using System;
+using CrawlBot.Logic.Abstract;
 using CrawlBot.Logic.Models;
 
 namespace CrawlBot.Logic.Concrete
@@ -9,6 +10,7 @@ namespace CrawlBot.Logic.Concrete
         {
             if (context.Response.InnerException != null)
             {
+                Console.WriteLine("Request failed");
                 //TODO: handle with Memento -> to queue again!
             }
         }

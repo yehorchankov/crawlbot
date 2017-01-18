@@ -41,22 +41,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ChangedContextItemRepository.cs" />
+    <Compile Include="Abstract\ContextBase.cs" />
     <Compile Include="Abstract\Handler.cs" />
     <Compile Include="Abstract\HttpBase.cs" />
     <Compile Include="Abstract\IWebDownloader.cs" />
     <Compile Include="Abstract\ResponseContent.cs" />
     <Compile Include="Concrete\HttpDownloader.cs" />
+    <Compile Include="Concrete\ProcessingQueue.cs" />
     <Compile Include="Concrete\ResponseFailureHandler.cs" />
     <Compile Include="Concrete\SuccessfullResponseHandler.cs" />
     <Compile Include="Enums\Priority.cs" />
     <Compile Include="Enums\RequestStatus.cs" />
     <Compile Include="Models\Content.cs" />
     <Compile Include="Models\ContentProxy.cs" />
+    <Compile Include="Models\HttpClosedContext.cs" />
     <Compile Include="Models\HttpContext.cs" />
     <Compile Include="Models\HttpRequest.cs" />
     <Compile Include="Models\HttpResponse.cs" />
     <Compile Include="Models\LastChangedContextItem.cs" />
-    <Compile Include="Models\ProcessingQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

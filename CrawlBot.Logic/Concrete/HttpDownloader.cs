@@ -9,8 +9,10 @@ namespace CrawlBot.Logic.Concrete
     {
         public async Task<HttpResponseMessage> GetHtmlContent(Uri uri)
         {
-            HttpClient client = new HttpClient();
-            return await client.GetAsync(uri);
+            using (HttpClient client = new HttpClient())
+            {
+                return await client.GetAsync(uri);
+            }
         }
     }
 }

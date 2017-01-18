@@ -16,10 +16,8 @@ namespace CrawlBot.Logic.Abstract
             ContextItems.Add(item);
         }
 
-        public void Add(HttpContext context)
+        public void Add(LastChangedContextItem item)
         {
-            var item = new LastChangedContextItem();
-            item.Save(context);
             ContextItems.Add(item);
         }
 

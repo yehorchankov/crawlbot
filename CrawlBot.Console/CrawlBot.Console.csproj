@@ -33,8 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>Binary\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,6 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IHtmlParser.cs" />
+    <Compile Include="Abstract\IHtmlSerializer.cs" />
+    <Compile Include="Abstract\IPing.cs" />
+    <Compile Include="Concrete\HtmlParser.cs" />
+    <Compile Include="Concrete\HtmlSerializer.cs" />
+    <Compile Include="Concrete\Peer.cs" />
+    <Compile Include="Concrete\PingImplementation.cs" />
+    <Compile Include="Model\ParsingResult.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -54,6 +66,9 @@
       <Project>{eb024231-2515-41e4-a0bd-9dbd77939e2b}</Project>
       <Name>CrawlBot.Logic</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Binary\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

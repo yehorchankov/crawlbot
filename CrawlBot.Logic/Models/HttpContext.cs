@@ -1,47 +1,43 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using CrawlBot.Logic.Abstract;
 
 namespace CrawlBot.Logic.Models
 {
-    public class HttpContext
+    public class HttpContext : ContextBase
     {
-        public HttpRequest Request { get; }
-        public HttpResponse Response { get; }
-
-        public Guid Id { get; set; }
-
-        public HttpContext(string uri) : this(new Uri(uri))
+        public HttpContext(string uri) : base(new Uri(uri))
         {
-            
         }
 
-        public HttpContext(Uri uri)
+        public List<ContextBase> ChildContext { get; set; }
+
+        public void AddChildContext(ContextBase context)
         {
-            Request = new HttpRequest(uri);
-            Response = new HttpResponse(uri);
+            ChildContext.Add(context);
         }
 
-        public bool CallGetRequestAsync()
+        public void CallChildRequestRecursively()
         {
-            return Response.Call();
+            foreach (var context in ChildContext)
+            {
+                var httpContext = context as HttpContext;
+                if (httpContext != null)
+                {
+                    httpContext.CallGetRequestAsync();
+                    httpContext.CallChildRequestRecursively();
+                }
+                else if (context is HttpClosedContext)
+                {
+                    context.CallGetRequestAsync();
+                }
+            }
         }
 
-        public LastChangedContextItem GetLastChangedContextItem()
+        public ContextBase GetChildContext(Guid id)
         {
-            var item = new LastChangedContextItem();
-            item.Save(this);
-            return item;
-        }
-
-        public void Recover(ChangedContextItemRepository repository)
-        {
-            SetFieldsValues(repository.GetItemById(Id));
-        }
-
-        public void SetFieldsValues(LastChangedContextItem item)
-        {
-            Response.InnerException = item.InnerException;
-            Response.InvocationTime = item.InvocationTime;
+            return ChildContext.FirstOrDefault(i => i.Id == id);
         }
     }
 }
